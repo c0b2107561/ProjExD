@@ -1,7 +1,7 @@
 import random
 import time
 
-num_of_alpha= 26 #全数
+num_of_alpha = 26 #全数
 num_of_all = 10 #対象数
 num_of_abs = 2 #欠損数
 num_of_challenge = 2 #チャレンジ数
