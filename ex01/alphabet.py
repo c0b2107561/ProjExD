@@ -20,7 +20,7 @@ def shutudai(alphabet):
         if c not in kesson:
             print(c, end=" ")
     print()
-    print("デバッグ用欠損文字:", kesson)
+    #print("デバッグ用欠損文字:", kesson)
 
     return kesson
 
