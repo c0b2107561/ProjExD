@@ -19,8 +19,7 @@ def shutudai(alphabet):
     for c in all_taisyou: 
         if c not in kesson:
             print(c, end=" ")
-    print()
-    #print("デバッグ用欠損文字:", kesson)
+    print() #デバッグ用に実行する場合は「print("デバッグ用欠損文字:", kesson)」を次行に入れる
 
     return kesson
 
