@@ -4,7 +4,6 @@ import tkinter.messagebox as tkm
 def click_number(event):#練習3
     btn = event.widget
     num = btn["text"]
-    #tkm.showinfo(num, f"[{num}]ボタンが押されました")
     entry.insert(tk.END, num) #練習5
 
 def click_equal(event):#四則演算
