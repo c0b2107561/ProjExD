@@ -7,7 +7,7 @@ def click_number(event):#練習3
     #tkm.showinfo(num, f"[{num}]ボタンが押されました")
     entry.insert(tk.END, num) #練習5
 
-def click_equal(event):
+def click_equal(event):#四則演算
     eqn = entry.get() #引数いらない。空にする。
     res = eval(eqn)
     entry.delete(0, tk.END)
