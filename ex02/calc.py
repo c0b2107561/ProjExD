@@ -13,16 +13,16 @@ def click_equal(event):
     entry.delete(0, tk.END)
     entry.insert(tk.END, res) #練習7
 
-def click_allclear(evnt):
+def click_allclear(evnt):#全削除
     eqn = entry.get()
     entry.delete(0, tk.END)
 
-def click_clear(event):
+def click_clear(event):#1文字削除
     eqn = entry.get()
     entry.delete(0, tk.END)
     entry.insert(0,eqn[:-1])
 
-def click_equals(event):
+def click_equals(event):#%表示
     eqn=entry.get()
     res=eval(eqn)/100
     entry.delete(0, tk.END)
