@@ -62,7 +62,6 @@ if __name__ == "__main__":
     yuka = 0 #yukaの初期値
     cx, cy = 300, 400
 
-
     key = "" #現在押されているキーを表す #練習4
 
     root.bind("<KeyPress>",key_down) #練習5-2
