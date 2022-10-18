@@ -18,7 +18,7 @@ def main_proc(): #練習7　#練習11
     if key == "Shift_L" and yuka > 1: #左のシフトを押すとやり直し
         mx = 1 #キャラクターを初期位置に移動
         my = 1 #キャラクターを初期位置に移動
-        yuka = 0 #床を塗った数を初期化 #初期状態は塗られているマスが0
+        yuka = 0 #床を塗った数を初期化 #初期状態は塗られているマスが0 #現在未実装
         for y in range(7): #床を塗った数を初期化
             for x in range(10):
                 if maze_lst[y][x] == 2:
@@ -37,6 +37,7 @@ def main_proc(): #練習7　#練習11
         maze_lst[my][mx] = 2
         yuka = yuka + 1 
         canvas.create_rectangle(mx*100,my*100,mx*100+100,my*100+100,fill="pink") #床に色を塗る
+    
     canvas.delete("koukaton") #キャラを消す
     canvas.create_image(mx*100+50, my*100+50, image=tori, tag="koukaton") #キャラを再描写
     root.after(100,main_proc)
