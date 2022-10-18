@@ -60,7 +60,6 @@ if __name__ == "__main__":
     mx, my = 1, 1 #練習11
     yuka = 0
     cx, cy = 300, 400
-    #canvas.create_image(cx, cy, image=tori, tag="tori") #練習3
 
 
     key = "" #現在押されているキーを表す #練習4
