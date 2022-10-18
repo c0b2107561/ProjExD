@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
     tori = tk.PhotoImage(file="ex03/fig/4.png")
     mx, my = 1, 1 #練習11
-    yuka = 0
+    yuka = 0 #yukaの初期値
     cx, cy = 300, 400
 
 
