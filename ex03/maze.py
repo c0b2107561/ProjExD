@@ -18,7 +18,7 @@ def main_proc(): #練習7　#練習11
     if key == "Shift_L" and yuka > 1: #左のシフトを押すとやり直し
         mx = 1 #キャラクターを初期位置に移動
         my = 1 #キャラクターを初期位置に移動
-        yuka = 0 #床を塗った数を初期化
+        yuka = 0 #床を塗った数を初期化 #初期状態は塗られているマスが0
         for y in range(7): #床を塗った数を初期化
             for x in range(10):
                 if maze_lst[y][x] == 2:
