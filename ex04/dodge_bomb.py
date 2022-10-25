@@ -30,7 +30,7 @@ def game_over_scr():
 
     button = pg.Rect(30,30,50,50)
     font = pg.font.Font(None, 100)
-    text_sfc = font.render("RESTERT?", True, "RED")
+    text_sfc = font.render("RESTERT?", True, "RED") #render()：文字を書いたSurfaceを生成
     # text_rct = text_sfc.get_rect()
     running1 = True
     while running1:
