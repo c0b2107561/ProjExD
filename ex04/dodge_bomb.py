@@ -82,7 +82,7 @@ def main():
 
     bomb1_sfc = pg.Surface((20,20)) 
     bomb1_sfc.set_colorkey((0, 0, 0))
-    pg.draw.circle(bomb1_sfc, (0, 255, 0), (10, 10), 10)
+    pg.draw.circle(bomb1_sfc, (0, 0, 255), (10, 10), 10)
     bomb1_rct = bomb1_sfc.get_rect()
     bomb1_rct.centerx, bomb1_rct.centery = randint(0, scrn_rct.width), randint(0, scrn_rct.height) 
     
