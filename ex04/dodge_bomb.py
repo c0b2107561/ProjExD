@@ -15,12 +15,19 @@ def main():
 
     clock = pg.time.Clock() #練習1
 
+    
     while True:
         scrn_sfc.blit(bg_sfc, bg_rct) #練習2
 
         for event in pg.event.get(): #練習2
             if event.type == pg.QUIT:return
         
+        key_stats = pg.key.get_pressed()
+        if key_stats[pg.K_UP]: tori_rct.centery -=1#upの時こうかとんの座標を-1
+        if key_stats[pg.K_DOWN]: tori_rct.centery +=1#downの時こうかとんの座標を+1
+        if key_stats[pg.K_LEFT]: tori_rct.centerx -=1#leftの時こうかとんの座標を-1
+        if key_stats[pg.K_RIGHT]: tori_rct.centerx +=1#rightの時こうかとんの座標を+1
+
         scrn_sfc.blit(tori_sfc, tori_rct) #練習3
         #blitの順番通りに表示される
 
