@@ -45,8 +45,10 @@ def game_over_scr():
 
         for event in pg.event.get(): #練習2
             if event.type == pg.QUIT:return
-            if event.type == pg.MOUSEBUTTONDOWN:
-                if button.collidepoint(event.pos):
+            # if event.type == pg.MOUSEBUTTONDOWN:
+            #     if button.collidepoint(event.pos):
+            if event.type == pg.KEYDOWN:
+                if event.key == pg.K_LSHIFT:
                     running1 = False
                     main()
 
