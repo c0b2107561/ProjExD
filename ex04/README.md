@@ -16,3 +16,8 @@
 - [ ]
 
 ### メモ
+- if tori_rct.colliderect(bomb1_rct):
+            running = False
+            game_over_scr()
+
+- 条件の時に別の関数を呼び出す、という処理をする為にはrunning = False(while = running)にて処理を止めてから関数を呼び出すという表記をする必要がある
