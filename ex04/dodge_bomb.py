@@ -45,7 +45,7 @@ def main():
         scrn_sfc.blit(tori_sfc, tori_rct) #練習3
         #blitの順番通りに表示される
 
-        bomb_rct.move_ip(vx, vy) #練習6
+        bomb_rct.move_ip(vx, vy) #練習6 #vx,vyは設定してある
         scrn_sfc.blit(bomb_sfc, bomb_rct) #練習5
         
         pg.display.update()
