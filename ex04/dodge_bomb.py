@@ -2,6 +2,17 @@ import pygame as pg
 import sys
 from random import randint
 
+def check_bound(obj_rct, scr_rct):
+    # obj_rct:こうかとんrct又は爆弾rct
+    # scr_rct:スクリーンrct
+
+    yoko, tate = +1, +1
+    if obj_rct.left < scr_rct.left or scr_rct.right < obj_rct.right: 
+        yoko = -1
+    if obj_rct.top < scr_rct.top or scr_rct.bottom < obj_rct.bottom:
+        tate = -1
+    return yoko, tate
+
 def main():
     #練習1
     pg.display.set_caption("逃げろ！こうかとん") 
@@ -42,12 +53,32 @@ def main():
         if key_stats[pg.K_LEFT]: tori_rct.centerx -=1#leftの時こうかとんの座標を-1
         if key_stats[pg.K_RIGHT]: tori_rct.centerx +=1#rightの時こうかとんの座標を+1
 
+        yoko, tate = check_bound(tori_rct, scrn_rct) #練習7
+        if yoko == -1:
+            if key_stats[pg.K_LEFT]:
+                tori_rct.centerx +=1
+            if key_stats[pg.K_RIGHT]:
+                tori_rct.centerx -=1
+        if tate == -1:
+            if key_stats[pg.K_UP]:
+                tori_rct.centerx +=1
+            if key_stats[pg.K_DOWN]:
+                tori_rct.centerx -=1
+
         scrn_sfc.blit(tori_sfc, tori_rct) #練習3
         #blitの順番通りに表示される
+
+        yoko, tate = check_bound(bomb_rct, scrn_rct) #練習7
+        vx *= yoko
+        vy *=tate
 
         bomb_rct.move_ip(vx, vy) #練習6 #vx,vyは設定してある
         scrn_sfc.blit(bomb_sfc, bomb_rct) #練習5
         
+        #練習8
+        if tori_rct.colliderect(bomb_rct):
+            return
+
         pg.display.update()
         clock.tick(1000)
 
