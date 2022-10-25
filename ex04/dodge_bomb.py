@@ -1,5 +1,3 @@
-import tkinter as tk
-import tkinter.messagebox as tkm
 import pygame as pg
 import sys
 from random import randint
