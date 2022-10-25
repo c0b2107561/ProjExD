@@ -23,7 +23,7 @@ def check_bound1(obj1_rct, scr1_rct):
     return yoko1, tate1
 
 def game_over_scr():
-    bg1_sfc = pg.image.load("ex04/fig/gameover.png") 
+    bg1_sfc = pg.image.load("ex04/fig/gameover.png") #gameover画像
     bg1_rct = bg1_sfc.get_rect()
 
     button = pg.Rect(30,30,50,50)
