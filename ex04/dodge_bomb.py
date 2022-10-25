@@ -24,27 +24,31 @@ def check_bound1(obj1_rct, scr1_rct):
 
 def game_over_scr():
     bg1_sfc = pg.image.load("ex04/fig/gameover.png") #gameover画像
+    bg1_sfc = pg.transform.scale(bg1_sfc,(1600,900))
     bg1_rct = bg1_sfc.get_rect()
 
     button = pg.Rect(30,30,50,50)
     font = pg.font.Font(None, 100)
     text_sfc = font.render("RESTERT?", True, "RED") #render()：文字を書いたSurfaceを生成
     # text_rct = text_sfc.get_rect()
+
     running1 = True
     while running1:
-        pg.draw.rect(scrn_sfc, (255, 0, 0), button)
-        scrn_sfc.blit(bg1_sfc, bg_rct)
-        scrn_sfc.blit(text_sfc, (550,525))
+        pg.draw.rect(scrn_sfc, (0, 255, 0), button)
+        scrn_sfc.blit(bg1_sfc, bg1_rct)
+        scrn_sfc.blit(text_sfc, (600,525))
 
         clock = pg.time.Clock()
-
         pg.display.update()
         clock.tick(20)
 
         for event in pg.event.get(): #練習2
             if event.type == pg.QUIT:return
-            # if event.type == pg.MOUSEBUTTONDOWN:
-            #     if button.collidepoint(event.pos):
+            if event.type == pg.MOUSEBUTTONDOWN:
+                if button.collidepoint(event.pos):
+                    running1 = False
+                    main()
+
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_LSHIFT:
                     running1 = False
