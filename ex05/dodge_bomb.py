@@ -30,8 +30,8 @@ class Battery(pygame.sprite.Sprite):
     def draw(self, surface):
         surface.blit(self.image, self.rect)
  
-### ミサイルクラス
-class Missile(pygame.sprite.Sprite):
+### ファイヤーボールクラス
+class Fireball(pygame.sprite.Sprite):
 
     def __init__(self, name, battery, enemies):
         pygame.sprite.Sprite.__init__(self)
@@ -44,7 +44,7 @@ class Missile(pygame.sprite.Sprite):
         self.image = pygame.transform.rotozoom(self.image, 90, 0.5)
  
  
-        ### ミサイルオブジェクト生成
+        ### ファイヤーボールオブジェクト生成
         self.rect = self.image.get_rect()
  
         ### 他オブジェクト保存
@@ -55,10 +55,10 @@ class Missile(pygame.sprite.Sprite):
         self.rect.centerx = self.battery.rect.centerx
         self.rect.bottom  = self.battery.rect.top
  
-    ### ミサイル移動
+    ### ファイヤーボール移動
     def update(self, surface):
  
-        ### ミサイル速度
+        ### ファイヤーボール速度
         self.rect.centery -= MSL_SPD
  
         ### 命中判定
@@ -113,22 +113,24 @@ def main():
  
     ### 画面初期化
     pygame.init()
+    
     surface = pygame.display.set_mode(SURFACE.size)
-    pygame.display.set_caption("逃げろ！こうかとん") 
+    pygame.display.set_caption("頑張れ！鳥獣戯画") 
     # global scrn_sfc, scrn_rct, bg_rct
     # scrn_sfc = pygame.display.set_mode((1600,900))
     surfase_rct = surface.get_rect()
 
     #練習1
     bg_sfc = pygame.image.load("ex05/fig/background.png") 
+    bg_sfc = pygame.transform.scale(bg_sfc,(1200,900))
     bg_rct = bg_sfc.get_rect()
 
 
     ### 砲台作成
     battery = Battery("ex05/fig/kamehameha.jpg")
  
-    ### ミサイルグループ
-    missiles = pygame.sprite.Group()
+    ### ファイヤーボールグループ
+    fireball = pygame.sprite.Group()
  
     ### エネミーグループ
     enemies = pygame.sprite.Group()
@@ -152,12 +154,12 @@ def main():
                 enemies.add(Enemy("ex05/fig/enemy.png"))
  
         ### スプライトを更新
-        missiles.update(surface)
+        fireball.update(surface)
         enemies.update()
  
         ### スプライトを描画
         battery.draw(surface)
-        missiles.draw(surface)
+        fireball.draw(surface)
         enemies.draw(surface)
  
         ### 画面更新
@@ -174,9 +176,9 @@ def main():
                 if event.key == K_ESCAPE:
                     exit()
  
-                ### ミサイル発射
+                ### ファイヤーボール発射
                 if event.key == K_SPACE:
-                    missiles.add(Missile("ex05/fig/fireball.png", battery, enemies))
+                    fireball.add(Fireball("ex05/fig/fireball.png", battery, enemies))
  
 
 ### 終了関数
