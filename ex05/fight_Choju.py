@@ -31,7 +31,7 @@ class Battery(pygame.sprite.Sprite):
         surface.blit(self.image, self.rect)
  
 ### ファイヤーボールクラス
-class Missile(pygame.sprite.Sprite):
+class Fireball(pygame.sprite.Sprite):
 
     def __init__(self, name, battery, enemies):
         pygame.sprite.Sprite.__init__(self)
@@ -178,7 +178,7 @@ def main():
  
                 ### ファイヤーボール発射
                 if event.key == K_SPACE:
-                    fireball.add(Missile("ex05/fig/fireball.png", battery, enemies))
+                    fireball.add(Fireball("ex05/fig/fireball.png", battery, enemies))
  
 
 ### 終了関数
