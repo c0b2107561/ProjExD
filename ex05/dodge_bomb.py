@@ -43,7 +43,6 @@ class Fireball(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(self.image, (150,150))
         self.image = pygame.transform.rotozoom(self.image, 90, 0.5)
  
- 
         ### ファイヤーボールオブジェクト生成
         self.rect = self.image.get_rect()
  
