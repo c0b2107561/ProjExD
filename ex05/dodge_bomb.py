@@ -6,6 +6,7 @@ from random import randint
 import pygame
 from pygame.locals import * 
 
+
 ### 砲台クラス
 class Battery(pygame.sprite.Sprite):
 
@@ -113,7 +114,7 @@ def main():
     ### 画面初期化
     pygame.init()
     
-    surface = pygame.display.set_mode(SURFACE.size)
+    surface = pygame.display.set_mode(SURFACE.size) #クラス関数化するのが理想
     pygame.display.set_caption("頑張れ！鳥獣戯画") 
     # global scrn_sfc, scrn_rct, bg_rct
     # scrn_sfc = pygame.display.set_mode((1600,900))
